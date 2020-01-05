@@ -1,0 +1,23 @@
+ul {
+  padding: 15px;
+  margin: 0px;
+  background: #fff;
+
+  li {
+    list-style: none;
+    border-bottom: 2px solid #eee;
+    display: inline-block;
+    width: 100%;
+
+    h2 {
+      font-size: 21px;
+      margin-bottom: 0px;
+
+    }
+
+    p {
+      font-size: 13px;
+      margin-top: 1px;
+    }
+  }
+}

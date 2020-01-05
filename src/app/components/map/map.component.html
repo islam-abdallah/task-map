@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="sidebar">
+      <app-side-bar *ngIf="dataPlaces" [data]="dataPlaces"></app-side-bar>
+  </div>
+  <div class="map">
+    <agm-map [scrollwheel]="null" [zoomControl]="true" [latitude]="lat" [longitude]="lng" [fitBounds]="true">
+      <!-- <agm-marker *ngFor="let map of maps"                   [iconUrl]="marker.iconUrl"
+      [latitude]="map.lat" [longitude]="map.lng" [visible]="marker.category == 'categoryA'"
+
+      [label]="{color: 'white' , text: map.type}" > -->
+      <agm-marker-cluster [styles]="clusterStyles" (clusterClick)="clusterClick()">
+        <agm-marker *ngFor="let map of dataPlaces" (markerClick)="showDetails(map)" [latitude]="map.latitude"
+          [longitude]="map.longitude" [agmFitBounds]="true">
+        </agm-marker>
+      </agm-marker-cluster>
+
+    </agm-map>
+  </div>
+</div>
